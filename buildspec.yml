@@ -10,7 +10,7 @@ phases:
       - npm install gulp-jasmine-browser
   build:
     commands:
-      - npm run build
+      - npm run test
   post_build:
     commands:
       - npm run package
