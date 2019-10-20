@@ -10,8 +10,8 @@ phases:
       nodejs: 10
     commands:
       - npm install
+      - npm install puppeteer
       - npm install -g jasmine
-      - npm install gulp-jasmine-browser
   build:
     commands:
       - npm run test-headless
