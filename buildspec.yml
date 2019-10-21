@@ -12,6 +12,7 @@ phases:
   pre_build:
     commands:
       - npm install
+      - npm install -g @angular/cli
   build:
     commands:
       - npm run build:ci
