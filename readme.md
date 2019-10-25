@@ -1,27 +1,15 @@
-# AngularUnitTesting
+# DevOps course project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+Vi beslöt oss för att skapa en simpel app med hjälp av Angular för projektet. Appen har egentligen ingen riktig funktionalitet, utan är mera bara där för att demonstrera hur grunderna med CI & CD fungerar.
 
-## Development server
+Då man öppnar en pull request i GitHub kommer en build i AWS CodeBuild att snurra igång, och ifall den slutförs utan några errors är det möjligt att "merge to master". Under builden körs ett antal test på appens olika komponenter för att säkerställa att allt är som det ska.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+När man mergear koden till master kommer pipelinen i AWS CodePipeline att starta. Pipelinen består av tre steg (stages), varav den första är en "source"-stage. Med andra ord kommer alltså pipelinen hämta koden från GitHub och sedan fortsätta till nästa stage, som är en "build"-stage. 
+I "build"-stagen kommer pipelinen starta upp en Linux-instans med direktiv från en "buildspec"-fil. Då koden kompilerats och gått igenom alla definerade steg i instruktionsfilen kommer pipelinen att gå till nästa stage, det vill säga en "deploy"-stage. 
+"Deploy"-stagen är det sista steget i pipelinen, och då kopieras den kompilerade koden till en S3 bucket, som i princip är en sorts filserver. Bucketen är inställd att fungera som en "static website host", den kommer alltså att tillåta användare att komma åt appen via en URL.
 
-## Code scaffolding
+GitHub repository:
+https://github.com/filipnykanen/devops2019
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Appen är tillgänglig via den här adressen:
+http://devops-project-bucket.s3-website.eu-central-1.amazonaws.com/
