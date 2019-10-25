@@ -19,7 +19,7 @@ phases:
       - npm run test:ci
   post_build:
     commands:
-      - aws s3 sync ./devops2019 s3://devops-project-bucket/codebuild-artifacts --acl 'public-read' --delete
+      - aws s3 sync ./ s3://devops-project-bucket/codebuild-artifacts --acl 'public-read' --delete
 artifacts:
   files:
     - '**/*.html'
@@ -27,4 +27,4 @@ artifacts:
     - '**/*.css'
     - '**/*.ico'
   discard-paths: yes
-  base-directory: '/devops2019'
+  base-directory: '/'
