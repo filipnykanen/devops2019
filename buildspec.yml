@@ -17,14 +17,4 @@ phases:
     commands:
       - npm run build:ci
       - npm run test:ci
-  post_build:
-    commands:
-      - aws s3 sync ./ s3://devops-project-bucket/codebuild-artifacts --acl 'public-read' --delete
-artifacts:
-  files:
-    - '**/*.html'
-    - '**/*.js'
-    - '**/*.css'
-    - '**/*.ico'
-  discard-paths: yes
-  base-directory: '/'
+  
