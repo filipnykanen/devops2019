@@ -17,11 +17,11 @@ phases:
     commands:
       - npm run build:ci
       - npm run test:ci
-  artifacts:
-    files:
-      - '**/*.html'
-      - '**/*.js'
-      - '**/*.css'
-      - '**/*.ico'
-    discard-paths: yes
-    base-directory: 'dist/angular-unit-testing'
+artifacts:
+  files:
+    - '**/*.html'
+    - '**/*.js'
+    - '**/*.css'
+    - '**/*.ico'
+  discard-paths: yes
+  base-directory: 'dist/angular-unit-testing'
