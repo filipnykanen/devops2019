@@ -6,7 +6,6 @@ phases:
       nodejs: 10
     commands:
       - yum update -y
-      - yum install -y dpkg fonts-liberation libasound2 libnspr4 libnss3 libx11-xcb1 xdg-utils libxss1 libappindicator1 libindicator7
       - wget https://extras.getpagespeed.com/redhat/8/x86_64/RPMS/google-chrome-stable_current_x86_64.rpm
       - yum install google-chrome*.rpm -y
   pre_build:
