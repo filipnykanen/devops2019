@@ -15,3 +15,5 @@ https://github.com/filipnykanen/devops2019
 
 Appen är tillgänglig via den här adressen:
 http://devops-project-bucket.s3-website.eu-central-1.amazonaws.com/
+
+test
