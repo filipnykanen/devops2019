@@ -1,10 +1,10 @@
 <h4>{{ formtitle }}</h4>
 <form id="form">
-  <input type="radio"> 11/10
+  Name: <input type="text">
+  <br><br>
+  <label for="comment">Comment:</label>
+  <br><br>
+  <textarea name="comment" id="form" cols="30" rows="10" placeholder="Please leave a comment here:"></textarea>
 </form>
 <br><br>
-<label for="comment">Comment:</label>
-<br><br>
-<textarea name="comment" id="form" cols="30" rows="10" placeholder="Here you are supposed to compliment the app"></textarea>
-<br><br>
-<button onClick="window.location.reload();">Send</button>
+<button name="submit" onClick="window.location.reload();">Send</button>

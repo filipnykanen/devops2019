@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class Form1Component {
-  formtitle = 'Please rate and comment this beautiful app:';
+  formtitle = 'This is a form:';
 }

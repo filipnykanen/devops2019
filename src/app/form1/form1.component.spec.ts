@@ -23,10 +23,16 @@ describe('Form1Component', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should contain text 'Please rate and comment this beautiful app'`, async(() => {
+  it(`should contain text 'This is a form:'`, async(() => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h4').textContent).toContain('Please rate and comment this beautiful app:');
+    expect(compiled.querySelector('h4').textContent).toContain('This is a form:');
+  }));
+
+  it(`should have a send button'`, async(() => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button').textContent).toContain('Send');
   }));
 
 });
