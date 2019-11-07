@@ -22,10 +22,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'DevOps course project'`, async(() => {
+  it(`should have as title 'Angular assignment'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('DevOps course project');
+    expect(app.title).toEqual('Angular assignment');
   }));
 
 });
